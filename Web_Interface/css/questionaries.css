@@ -83,3 +83,8 @@ button {
     color: rgb(30, 216, 13);
     border: 2px solid #161616;
   }
+
+whitetext {
+    color:rgb(255, 249, 249);
+    font-size: 2em;
+}
