@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.about-page{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../imgs/about.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#about{
+    width: 100%;
+}
+
+/*This Project Title*/
+.about-title{
+    padding-top: 180px;
+    padding-bottom: 70px;
+    text-align: center;
+} 
+.about-title h1{
+    margin: auto;
+    font-size: 120px;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    /* z-index: 1; */
+}
+
+/*Two transparent boxes*/
+.idea{
+    margin-left: 100px;
+    position: relative;
+    max-width: 600px;
+    padding: 50px;
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    float: left;
+    height: 250px;
+}
+
+.idea h1{
+    font-size: 50px;
+    color:#fff;
+}
+.idea p{
+    color:#fff;
+    font-size: 20px;
+}
+
+.data{
+    margin-right: 100px;
+    height: 250px;
+    position: relative;
+    max-width: 600px;
+    padding: 50px;
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    float: right;
+}
+
+.data h1{
+    color:#fff;
+    font-size: 50px;
+}
+.data p{
+    color:#fff;
+    font-size: 20px;
+}
+
+
+
+/*Home page*/
+#sideNav{
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 2;
+}
+nav ul li{
+    list-style: none;
+    margin: 50px 20px;
+}
+nav ul li a{
+    text-decoration: none;
+    color:#fff;
+    text-transform: uppercase;
+}
