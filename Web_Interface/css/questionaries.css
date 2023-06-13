@@ -11,6 +11,7 @@ Font, Alignment */
 }
 
 body {
+    background-image: url('../images/questionaires_background.webp');
     background-color: #05c46b;
     font-family: Verdana;
     text-align: center;
@@ -70,3 +71,15 @@ button {
     margin-top: 50px;
     margin-bottom: 20px;
 }
+
+.button1 {
+    background-color: rgb(112, 255, 17); 
+    color: rgb(0, 0, 0); 
+    border: 2px solid #ffffff;
+  }
+  
+.button1:hover {
+    background-color: #ffffff;
+    color: rgb(30, 216, 13);
+    border: 2px solid #161616;
+  }
