@@ -40,15 +40,15 @@ body {
     transition: .3s;
 }
 
-.navbar a:hover,
+/* .navbar a:hover,
 .navbar a.active {
     color: rgb(121 121 121);
 
-}
+} */
 
 .main {
     min-height: 100vh;
-    background: url('./../images/result_background.webp') no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('./../images/result.jpg') no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -85,6 +85,7 @@ body {
     font-size: 78px;
     font-weight: 700;
     text-shadow: 0 0 10px rgba(0,0,0,.3);
+    color: #fff;
 }
 
 .result-content p {
@@ -146,7 +147,7 @@ body {
     padding: 2s0px;
     width: 400px;
     height: 400px;
-    left:5%;
+    right: 5%;
     overflow: auto;
     color: white;
     font-size: 20px;

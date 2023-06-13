@@ -11,7 +11,7 @@ Font, Alignment */
 }
 
 body {
-    background-image: url('../images/questionaires_background.webp');
+    background-image: url('../images/questionnaire.jpg');
     /* background-repeat:no-repeat; */
     background-color: #05c46b;
     font-family: Verdana;
@@ -62,8 +62,8 @@ button and Checkbox */
 
 /* Styling Button */
 button {
-    background-color: #05c46b;
-    border: 1px solid #777;
+    background-color: #A6BAAF;
+    border: 2px solid #fff;
     border-radius: 2px;
     font-family: inherit;
     font-size: 21px;
@@ -74,15 +74,14 @@ button {
 }
 
 .button1 {
-    background-color: rgb(112, 255, 17); 
+    background-color: #75b693; 
     color: rgb(0, 0, 0); 
     border: 2px solid #ffffff;
   }
   
 .button1:hover {
-    background-color: #ffffff;
-    color: rgb(30, 216, 13);
-    border: 2px solid #161616;
+    background: #1f5236;
+    box-shadow: none;
   }
 
 whitetext {
