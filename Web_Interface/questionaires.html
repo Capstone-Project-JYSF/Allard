@@ -15,8 +15,10 @@
     <main class="body">
         <h1>Questions</h1>
 
+        <button id="reset-button" class="reset">Reset</button>
+
         <!-- Create Form -->
-        <form class="form">
+        <form id="form" class="form">
 
             <!-- judge name -->
             <!-- <div class="form-control">
@@ -750,6 +752,13 @@
                 Submit
             </button>
         </form>
+    <script>
+        const resetButton = document.getElementById("reset-button");
+        const myForm = document.getElementById("form");
         
+        resetButton.addEventListener("click", function() {
+        myForm.reset();
+        });
+    </script>
 </body>
 </html>
