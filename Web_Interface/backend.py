@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Form
+from pydantic import BaseModel
 import csv
 from fastapi.responses import FileResponse
 import uvicorn
@@ -12,26 +13,28 @@ app = FastAPI()
 app.mount("/css", StaticFiles(directory= css_directory), name="css")
 app.mount("/images", StaticFiles(directory=imgs_directory), name="images")
 
-csv_filepath = Path(__file__).parent / "form_data.csv"
+# csv_filepath = Path(__file__).parent / "form_data.csv"
+
+class FormData(BaseModel):
+    location: str
+    l_represented: str
+    length: str
+    rent: str
+    rent_deposit: str
+    checkbox: list[str] = []
 
 @app.post("/submit-form")
-async def submit_form(location: str = Form(...), l_represented: str = Form(...), length: str = Form(...),
-                      rent: str = Form(...), rent_deposit: str = Form(...), checkbox: list[str] = Form(...)):
+def submit_form(data: FormData):
     # Create a dictionary with the form data
-    form_data = {
-        "location": location,
-        "l_represented": l_represented, #landlord represented
-        "length": length,
-        "rent": rent,
-        "rent_deposit": rent_deposit,
-        "checkbox": checkbox
-    }
-    print(form_data)
+    
+    
+    print(data)
     
     # Save the form data to a CSV file
-    with open(csv_filepath, mode="w", newline="") as file:
-        writer = csv.DictWriter(file, fieldnames=form_data.keys())
-        writer.writerow(form_data)
+    with open("form_data.csv", mode="w", newline="") as file:
+        writer = csv.writer(file)#, fieldnames=data.__fields__.keys()
+        writer.writerow(
+            [data.location, data.l_represented, data.length, data.rent_deposit, ",".join(data.checkbox)])
     
     return pass_file("result.html")
 
