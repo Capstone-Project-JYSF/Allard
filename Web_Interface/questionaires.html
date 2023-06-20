@@ -97,17 +97,17 @@
                 <label for="option-1">
                     <input type="radio"
                         id="option-1"
-                        name="l-represented">Yes</input>
+                        name="l_represented">Yes</input>
                 </label>
                 <label for="option-2">
                     <input type="radio"
                         id="option-2"
-                        name="l-represented">No</input>
+                        name="l_represented">No</input>
                 </label>
                 <label for="option-3">
                     <input type="radio"
                         id="option-3"
-                        name="l-represented">Other</input>
+                        name="l_represented">Other</input>
                 </label>
             </div>
 
@@ -575,81 +575,84 @@
                 <!-- Input Type Checkbox -->
                 <label for="inp-1">
                     <input type="checkbox"
-                        name="inp">L1</input></label>
+                    name="checkbox[]">L1</input></label>
                 <label for="inp-2">
                     <input type="checkbox"
-                        name="inp">L2</input></label>
+                    name="checkbox[]">L2</input></label>
                 <label for="inp-3">
                     <input type="checkbox"
-                        name="inp">L3</input></label>
+                    name="checkbox[]">L3</input></label>
                 <label for="inp-4">
                     <input type="checkbox"
-                        name="inp">L4</input></label>
+                    name="checkbox[]">L4</input></label>
                 <label for="inp-5">
                     <input type="checkbox"
-                        name="inp">L8</input></label>
+                    name="checkbox[]">L8</input></label>
                 <label for="inp-6">
                     <input type="checkbox"
-                        name="inp">L9</input></label>
+                    name="checkbox[]">L9</input></label>
                 <label for="inp-7">
                     <input type="checkbox"
-                        name="inp">N5</input></label>
+                    name="checkbox[]">N5</input></label>
                 <label for="inp-8">
                     <input type="checkbox"
-                        name="inp">N6</input></label>
+                    name="checkbox[]">N6</input></label>
                 <label for="inp-9">
                     <input type="checkbox"
-                        name="inp">N8</input></label>
+                    name="checkbox[]">N8</input></label>
                 <label for="inp-10">
                     <input type="checkbox"
-                        name="inp">T1</input></label>
+                    name="checkbox[]">T1</input></label>
                 <label for="inp-11">
                     <input type="checkbox"
-                        name="inp">T2</input></label>
+                    name="checkbox[]">T2</input></label>
                 <label for="inp-12">
                     <input type="checkbox"
-                        name="inp">T3</input></label>
+                    name="checkbox[]">T3</input></label>
                 <label for="inp-13">
                     <input type="checkbox"
-                        name="inp">T5</input></label>
+                    name="checkbox[]">T5</input></label>
                 <label for="inp-14">
                     <input type="checkbox"
-                        name="inp">T6</input></label>
+                    name="checkbox[]">T6</input></label>
             </div>
 
             <!-- length of tenancy-->  
             <div class="form-control">
                 <label for="length" id="label-length">
-                    What was the length of the tenancy
+                    What was the length of the tenancy?*
                 </label>
 
                 <!-- Input Type length-->
                 <input type="length"
                     id="length"
+                    name="length" required
                     placeholder="Enter your length of tenancy" />
             </div>
 
             <!-- monthly rent -->  
             <div class="form-control">
                 <label for="rent" id="label-rent">
-                    What was the monthly rent?
+                    What was the monthly rent?*
                 </label>
 
                 <!-- Input Type rent-->
                 <input type="rent"
                     id="rent"
+                    name="rent" required
                     placeholder="Enter your monthly rent" />
             </div>
     
             <!-- rental deposit amount -->  
             <div class="form-control">
-                <label for="rent-deposit" id="label-rent-deposit">
-                    What was the rental deposit amount?
+                <label for="rent_deposit" id="label-rent-deposit">
+                    What was the rental deposit amount?*
                 </label>
 
                 <!-- Input Type rent-->
-                <input type="rent-deposit"
-                    id="rent-deposit"
+                <input type="rent_deposit"
+                    id="rent_deposit"
+                    name="rent_deposit" required
                     placeholder="Enter your rental deposit amount" />
             </div>
 
@@ -748,16 +751,73 @@
                 </textarea>
             </div> -->
 
-            <button class = 'button1'>
-                Submit
-            </button>
+            <button id="submit-button" class = 'button1'>Submit</button>
+            <p id="error-message" style="color: red; display: none;">Please fill in all required fields.</p>
+            <p id="success-message" style="color: green; display: none;"></p>
         </form>
     <script>
         const resetButton = document.getElementById("reset-button");
-        const myForm = document.getElementById("form");
+        const form = document.getElementById("form");
         
+        const submitButton = document.getElementById("submit-button");
+        const errorMessage = document.getElementById("error-message");
+        const successMessage = document.getElementById("success-message");
+        
+
         resetButton.addEventListener("click", function() {
-        myForm.reset();
+            form.reset();
+        })
+
+        submitButton.addEventListener("click", function() {
+
+            // Check if the form is valid
+            if (form.checkValidity()) {
+                // Create a new FormData object and capture all form values
+                const formData = new FormData(form);
+                
+                // Send the data to the backend using fast API
+                fetch('/submit-form', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(result => {
+                    // Handle the received result from the backend
+                    console.log(result);
+                    // Display success message
+                    successMessage.textContent = result.message;
+                    successMessage.style.display = 'block';
+                    // Reset the form
+                    form.reset();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            } else {
+                // Display an error message
+                errorMessage.style.display = 'block';
+            }
+            // Create a new FormData object and capture all form values
+            // const formData = new FormData(form);
+                
+            //     // Send the data to the backend using fast API
+            //     fetch('/submit-form', {
+            //         method: 'POST',
+            //         body: formData
+            //     })
+            //     .then(response => response.json())
+            //     .then(result => {
+            //         // Handle the received result from the backend
+            //         console.log(result);
+            //         // Display success message
+            //         successMessage.textContent = result.message;
+            //         successMessage.style.display = 'block';
+            //         // Reset the form
+            //         form.reset();
+            //     })
+            //     .catch(error => {
+            //         console.error('Error:', error);
+            //     });
         });
     </script>
 </body>

@@ -103,3 +103,9 @@ whitetext {
     color:rgb(255, 249, 249);
     font-size: 2em;
 }
+
+#error-message {
+    color: red;
+    display: none;
+    margin-top: 10px;
+  }
