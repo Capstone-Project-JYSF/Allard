@@ -5,7 +5,7 @@
 .about-page{
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../imgs/about.jpg);
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('./../images/law_main.jpg') no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -30,42 +30,18 @@
 }
 
 /*Two transparent boxes*/
-.idea{
-    margin-left: 100px;
+.features{
     position: relative;
+    margin: 0 auto; /* Center the boxes horizontally */
     max-width: 600px;
     padding: 50px;
     background: rgba(255,255,255,0.2);
     box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    float: left;
-    height: 250px;
+    height: 450px;
+    margin-top: 10px; /* Add margin-top to create space below the title */
 }
 
-.idea h1{
-    font-size: 50px;
-    color:#fff;
-}
-.idea p{
-    color:#fff;
-    font-size: 20px;
-}
-
-.data{
-    margin-right: 100px;
-    height: 250px;
-    position: relative;
-    max-width: 600px;
-    padding: 50px;
-    background: rgba(255,255,255,0.2);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    float: right;
-}
-
-.data h1{
-    color:#fff;
-    font-size: 50px;
-}
-.data p{
+.features p{
     color:#fff;
     font-size: 20px;
 }
