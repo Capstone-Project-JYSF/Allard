@@ -18,7 +18,7 @@
         <button id="reset-button" class="reset">Reset</button>
 
         <!-- Create Form -->
-        <form id="form" class="form" method="POST">
+        <form id="form" class="form">
 
 
             <!-- location of tenant board -->
@@ -558,47 +558,47 @@
                     <small>(Check all that apply)</small>
                 </label>
                 <!-- Input Type Checkbox -->
-                <label for="inp-1">
-                    <input type="checkbox"
+                <label for="checkbox1">
+                    <input type="checkbox" id="checkbox1"
                     name="checkbox[]" value="L1">L1</input></label>
-                <label for="inp-2">
-                    <input type="checkbox"
+                <label for="checkbox2">
+                    <input type="checkbox" id="checkbox2"
                     name="checkbox[]" value="L2">L2</input></label>
-                <label for="inp-3">
-                    <input type="checkbox"
+                <label for="checkbox3">
+                    <input type="checkbox" id="checkbox3"
                     name="checkbox[]" value="L3">L3</input></label>
-                <label for="inp-4">
-                    <input type="checkbox"
+                <label for="checkbox4">
+                    <input type="checkbox" id="checkbox4"
                     name="checkbox[]" value="L4">L4</input></label>
-                <label for="inp-5">
-                    <input type="checkbox"
+                <label for="checkbox5">
+                    <input type="checkbox" id="checkbox5"
                     name="checkbox[]" value="L8">L8</input></label>
-                <label for="inp-6">
-                    <input type="checkbox"
+                <label for="checkbox6">
+                    <input type="checkbox" id="checkbox6"
                     name="checkbox[]" value="L9">L9</input></label>
-                <label for="inp-7">
-                    <input type="checkbox"
+                <label for="checkbox7">
+                    <input type="checkbox" id="checkbox7"
                     name="checkbox[]" value="N5">N5</input></label>
-                <label for="inp-8">
-                    <input type="checkbox"
+                <label for="checkbox8">
+                    <input type="checkbox" id="checkbox8"
                     name="checkbox[]" value="N6">N6</input></label>
-                <label for="inp-9">
-                    <input type="checkbox"
+                <label for="checkbox9">
+                    <input type="checkbox" id="checkbox9"
                     name="checkbox[]" value="N8">N8</input></label>
-                <label for="inp-10">
-                    <input type="checkbox"
+                <label for="checkbox10">
+                    <input type="checkbox" id="checkbox10"
                     name="checkbox[]" value="T1">T1</input></label>
-                <label for="inp-11">
-                    <input type="checkbox"
+                <label for="checkbox11">
+                    <input type="checkbox" id="checkbox11"
                     name="checkbox[]" value="T2">T2</input></label>
-                <label for="inp-12">
-                    <input type="checkbox"
+                <label for="checkbox12">
+                    <input type="checkbox" id="checkbox12"
                     name="checkbox[]" value="T3">T3</input></label>
-                <label for="inp-13">
-                    <input type="checkbox"
+                <label for="checkbox13">
+                    <input type="checkbox" id="checkbox13"
                     name="checkbox[]" value="T5">T5</input></label>
-                <label for="inp-14">
-                    <input type="checkbox"
+                <label for="checkbox14">
+                    <input type="checkbox" id="checkbox14"
                     name="checkbox[]" value="T6">T6</input></label>
             </div>
 
@@ -755,33 +755,44 @@
 
         submitButton.addEventListener("click", async function() {
         // Retrieve the form element
-        const form = document.getElementById("my-form");
+        const form = document.getElementById("form");
         
         if (form.checkValidity()) {
-            // Create a new FormData object and capture all form values
+            
             const formData = new FormData(form);
-        
-        // Send the data to the backend using FastAPI
-        try {
-            const response = await fetch('/submit-form', {
-                method: 'POST',
-                body: formData
-            });
-            const result = await response.json();
-            // Handle the received result from the backend
-            console.log(result);
-            // Display success message
-            successMessage.textContent = result.message;
-            successMessage.style.display = 'block';
-            // Reset the form
-            form.reset();
-        } catch (error) {
-                console.error('Error:', error);
+
+            const checkboxes =
+                document.getElementsByName('checkbox[]');
+            const result = [];
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    result.push(checkboxes[i].value);
+                }
             }
-        } else {
-            // Display an error message
-            errorMessage.style.display = 'block';
-        }
+            formData.delete("checkbox[]");
+            formData.append("checkbox[]", result);
+        
+            // Send the data to the backend using FastAPI
+            try {
+                const response = await fetch('/submit-form', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+                // Handle the received result from the backend
+                console.log(result);
+                // Display success message
+                successMessage.textContent = result.message;
+                successMessage.style.display = 'block';
+                // Reset the form
+                form.reset();
+            } catch (error) {
+                    console.error('Error:', error);
+                }
+            } else {
+                // Display an error message
+                errorMessage.style.display = 'block';
+            }
         });
     </script>
 </body>
