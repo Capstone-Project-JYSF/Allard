@@ -754,45 +754,52 @@
         })
 
         submitButton.addEventListener("click", async function() {
-        // Retrieve the form element
-        const form = document.getElementById("form");
         
-        if (form.checkValidity()) {
+            // Retrieve the form element
+            const form = document.getElementById("form");
             
-            const formData = new FormData(form);
+            if (form.checkValidity()) {
+                
+                const formData = new FormData(form);
 
-            const checkboxes =
-                document.getElementsByName('checkbox[]');
-            const result = [];
-            for (var i = 0; i < checkboxes.length; i++) {
-                if (checkboxes[i].checked) {
-                    result.push(checkboxes[i].value);
+                const checkboxes =
+                    document.getElementsByName('checkbox[]');
+                const result = [];
+                for (var i = 0; i < checkboxes.length; i++) {
+                    if (checkboxes[i].checked) {
+                        result.push(checkboxes[i].value);
+                    }
                 }
-            }
-            formData.delete("checkbox[]");
-            formData.append("checkbox[]", result);
-        
-            // Send the data to the backend using FastAPI
-            try {
-                const response = await fetch('/submit-form', {
-                    method: 'POST',
-                    body: formData
-                });
-                const result = await response.json();
-                // Handle the received result from the backend
-                console.log(result);
-                // Display success message
-                successMessage.textContent = result.message;
-                successMessage.style.display = 'block';
-                // Reset the form
-                form.reset();
-            } catch (error) {
-                    console.error('Error:', error);
+                formData.delete("checkbox[]");
+                formData.append("checkbox[]", result);
+            
+                // Send the data to the backend using FastAPI
+                try {
+                    const response = await fetch('/submit-form', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    const result = await response.json();
+                    // Handle the received result from the backend
+                    console.log(result);
+                    // Display success message
+                    successMessage.textContent = result.message;
+                    successMessage.style.display = 'block';
+                    // Reset the form
+                    // form.reset();
+                    const probabilities = result.probabilities;
+                    // Redirect to result page with probabilities
+                    window.location.href = `/result.html?probability1=${probabilities.probability1}
+                                &probability2=${probabilities.probability2}
+                                &probability3=${probabilities.probability3}`;
+                    
+                } catch (error) {
+                        console.error('Error:', error);
+                    }
+                } else {
+                    // Display an error message
+                    errorMessage.style.display = 'block';
                 }
-            } else {
-                // Display an error message
-                errorMessage.style.display = 'block';
-            }
         });
     </script>
 </body>

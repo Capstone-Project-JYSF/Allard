@@ -2,11 +2,12 @@ from fastapi import FastAPI, Form, Request
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 import csv
-from fastapi.responses import FileResponse, RedirectResponse
+from fastapi.responses import FileResponse, RedirectResponse, JSONResponse
 import uvicorn
 from fastapi.staticfiles import StaticFiles
 from pathlib import Path
 import json
+from fastapi.templating import Jinja2Templates
 
 css_directory = Path(__file__).parent / "css"
 imgs_directory = Path(__file__).parent / "images"
@@ -23,6 +24,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Create an instance of the Jinja2Templates class
+templates = Jinja2Templates(directory=Path(__file__))
+
 class FormData(BaseModel):
     location: str
     l_represented: str
@@ -30,6 +34,22 @@ class FormData(BaseModel):
     rent: str
     rent_deposit: str
     checkbox: list[str] = []
+
+
+def calculate_probabilities():
+    # Perform your calculations and get the probabilities
+    probabilities = {
+        'probability1': 0.8,
+        'probability2': 0.5,
+        'probability3': 0.3
+    }
+    return probabilities
+
+def save_to_csv(data):
+    with open("form_data.csv", mode="w", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow(data)
+
 
 @app.post("/submit-form")
 async def submit_form(request: Request):
@@ -51,12 +71,25 @@ async def submit_form(request: Request):
     csv_data = [location, l_represented, length, rent,rent_deposit]+checkbox 
     save_to_csv(csv_data)
 
-    return FileResponse("result.html")
+    # Perform calculations and get probabilities
+    probabilities = calculate_probabilities()
 
-def save_to_csv(data):
-    with open("form_data.csv", mode="w", newline="") as file:
-        writer = csv.writer(file)
-        writer.writerow(data)
+    # Prepare the JSON response
+    response_data = {
+        'probabilities': probabilities
+    }
+
+    return JSONResponse(content=response_data)
+
+
+
+@app.get("/result")
+async def show_result(request: Request):
+    # Your code to retrieve the probabilities from the model
+    probabilities = [0.7, 0.2, 0.1]
+
+    context = {"request": request, "probabilities": probabilities}
+    return templates.TemplateResponse("result.html", context)
 
 @app.get("/")
 async def start():
