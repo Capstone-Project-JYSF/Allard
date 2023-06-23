@@ -18,25 +18,8 @@
         <button id="reset-button" class="reset">Reset</button>
 
         <!-- Create Form -->
-        <form id="form" class="form">
+        <form id="form" class="form" method="POST">
 
-            <!-- judge name -->
-            <!-- <div class="form-control">
-                <label for="judge" id="label-judge">
-                    Who's the member adjudicating the decision?
-                </label>
-                 -->
-                <!-- Dropdown options -->
-                <!-- <select name="judge" id="judge">
-                    <option value="none" selected disabled hidden>Select an Option</option>
-                    <option value="sonia anwar-ali">sonia anwar-ali</option>
-                    <option value="shelby whittick">shelby whittick</option>
-                    <option value="ruth carey">
-                        ruth carey
-                    </option>
-                    <option value="other">Other</option>
-                </select>
-            </div> -->
 
             <!-- location of tenant board -->
             <div class="form-control">
@@ -72,8 +55,7 @@
                     <option value="Kingston">Kingston</option>
                     <option value="Sudbury">Sudbury</option>        
                     <option value="Thunder Bay">Thunder Bay</option>
-                    <option value="Brantford">Brantford</option>   
-                    <option value="hearing in Windsor">hearing in Windsor</option>                
+                    <option value="Brantford">Brantford</option>                
                     <option value="other">Other</option>
                 </select>
             </div>
@@ -771,35 +753,35 @@
             form.reset();
         })
 
-        submitButton.addEventListener("click", function() {
-
-            // Check if the form is valid
-            if (form.checkValidity()) {
-                // Create a new FormData object and capture all form values
-                const formData = new FormData(form);
-                
-                // Send the data to the backend using fast API
-                fetch('/submit-form', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(result => {
-                    // Handle the received result from the backend
-                    console.log(result);
-                    // Display success message
-                    successMessage.textContent = result.message;
-                    successMessage.style.display = 'block';
-                    // Reset the form
-                    form.reset();
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
-            } else {
-                // Display an error message
-                errorMessage.style.display = 'block';
+        submitButton.addEventListener("click", async function() {
+        // Retrieve the form element
+        const form = document.getElementById("my-form");
+        
+        if (form.checkValidity()) {
+            // Create a new FormData object and capture all form values
+            const formData = new FormData(form);
+        
+        // Send the data to the backend using FastAPI
+        try {
+            const response = await fetch('/submit-form', {
+                method: 'POST',
+                body: formData
+            });
+            const result = await response.json();
+            // Handle the received result from the backend
+            console.log(result);
+            // Display success message
+            successMessage.textContent = result.message;
+            successMessage.style.display = 'block';
+            // Reset the form
+            form.reset();
+        } catch (error) {
+                console.error('Error:', error);
             }
+        } else {
+            // Display an error message
+            errorMessage.style.display = 'block';
+        }
         });
     </script>
 </body>
