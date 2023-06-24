@@ -2,7 +2,11 @@
 ![](images/allard_logo.png)
 
 ## Introduction 
-The project aims to create a system that can provide brief information about the winning prediction on Residential Tenancy related issue in Ontario by analyzing 44,228 cases to understand why judges allow or deny eviction orders in Ontario's Residential Tenancy Board (RTB) under the current legislation. This is a fascinating and socially significant, since it helps thousands of people who are considering whether to launch the suit or not due to financial related problems. Additionally, the current legislation's ambiguity makes it difficult for legal practitioners and academics to predict or understand the reasoning behind certain decisions. By gaining insights into the factors influencing judges' decisions, this project would not only revolutionize access to justice in Ontario, but also show the possible combination of computer science and law.  The primary goal of the project is to create a data-driven report, with the possibility of developing an app, API, or dashboard to provide accessible insights and improve access to justice for those facing eviction.
+The project aims to create a system that can provide brief information about the winning prediction on Residential Tenancy related issues in Ontario by analyzing 44,228 cases to understand why judges allow or deny eviction orders in Ontario's Residential Tenancy Board (RTB) under the current legislation. This is fascinating and socially significant since it helps thousands of people who are considering whether to launch the suit or not due to financial-related problems. Additionally, the current legislation's ambiguity makes it difficult for legal practitioners and academics to predict or understand the reasoning behind certain decisions. 
+
+![](images/intro.png)
+
+By gaining insights into the factors influencing judges' decisions, this project would not only revolutionize access to justice in Ontario but also show the possible combination of computer science and law.  The primary goal of the project is to create a data-driven report, with the possibility of developing an app, API, or dashboard to provide accessible insights and improve access to justice for those facing eviction.
 
 ## Table of Contents
 * [Contributors](#contributors)
@@ -25,14 +29,25 @@ The project aims to create a system that can provide brief information about the
  
 ## Overview of the Data
 
+### Data Overview
+
+There are 702 samples in the data, and they are all human-annotated, which means that they are extracted by human hands. These samples are based on cases regarding residential tenancy disputes in Ontario from the year 2017 all the way to the year 2020. The people who annotated these 702 data are first/second-year law students working from 2020 to 2021. So the process is like this: they first read through the information of that case that CanLII published. Then they extract the information based on a template.
 
 ### Data Sample
 
+* Data Sample 1
+
+![](images/data_sample1.png)
+  
+* Data Sample 2
+
+![](images/data_sample2.png)
+
 ### Data Preprocessing
 
+21 Columns are dropped due to too little information presented. Yes/No questions are converted into binary 1 and 0. Then, for numeric values, to keep things consistent, we remove units like dollar signs, replace missing values with the column’s mean value, etc. Furthermore, the column “Which other specific applications of the landlord or the tenant were mentioned?” are converted into 15 binary features for each kind of application. We narrowed down the labels to three classes: relief, no relief, and conditional order; it then becomes a multi-class classification task.
 
-### Data Imputation and Feature Transformation
-
+After all the cleaning work, there are 696 examples and 47 features with no missing values remaining.
 
 ### Models training and Evaluation
 
