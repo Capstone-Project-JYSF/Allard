@@ -56,7 +56,7 @@
                     <option value="Sudbury">Sudbury</option>        
                     <option value="Thunder Bay">Thunder Bay</option>
                     <option value="Brantford">Brantford</option>                
-                    <option value="other">Other</option>
+                    <option value="Unknown">Unknown</option>
                 </select>
             </div>
 
@@ -69,8 +69,8 @@
                 <!-- Dropdown options
                 <select name="landlord-represented" id="landlord-represented">
                     <option value="none" selected disabled hidden>Select an Option</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
+                    <option value=1>Yes</option>
+                    <option value=0>No</option>
                     <option value="other">Other</option>
                 </select>
             </div> -->
@@ -80,19 +80,19 @@
                     <input type="radio"
                         id="option-1"
                         name="l_represented"
-                        value = "1">Yes</input>
+                        value = 1>Yes</input>
                 </label>
                 <label for="option-2">
                     <input type="radio"
                         id="option-2"
                         name="l_represented"
-                        value = "0">No</input>
+                        value = 0>No</input>
                 </label>
                 <label for="option-3">
                     <input type="radio"
                         id="option-3"
                         name="l_represented"
-                        value = "NaN">Other</input>
+                        value = 0>Unknwon</input>
                 </label>
             </div>
 
@@ -106,17 +106,17 @@
                 <label for="option-1">
                     <input type="radio"
                         id="option-1"
-                        name="l-attendance">Yes</input>
+                        name="l_attendance" value = 1>Yes</input>
                 </label>
                 <label for="option-2">
                     <input type="radio"
                         id="option-2"
-                        name="l-attendance">No</input>
+                        name="l_attendance" value = 0>No</input>
                 </label>
                 <label for="option-3">
                     <input type="radio"
                         id="option-3"
-                        name="l-attendance">Other</input>
+                        name="l_attendance" value = 0>Unknwon</input>
                 </label>
             </div>
             
@@ -130,17 +130,17 @@
                 <label for="option-1">
                     <input type="radio"
                         id="option-1"
-                        name="t-represented">Yes</input>
+                        name="t_represented" value = 1>Yes</input>
                 </label>
                 <label for="option-2">
                     <input type="radio"
                         id="option-2"
-                        name="t-represented">No</input>
+                        name="t_represented" value = 0>No</input>
                 </label>
                 <label for="option-3">
                     <input type="radio"
                         id="option-3"
-                        name="t-represented">Other</input>
+                        name="t_represented" value = 0>Unknwon</input>
                 </label>
             </div>
 
@@ -154,17 +154,17 @@
                 <label for="option-1">
                     <input type="radio"
                         id="option-1"
-                        name="t-attend">Yes</input>
+                        name="t_attend" value = 1>Yes</input>
                 </label>
                 <label for="option-2">
                     <input type="radio"
                         id="option-2"
-                        name="t-attend">No</input>
+                        name="t_attend" value = 0>No</input>
                 </label>
                 <label for="option-3">
                     <input type="radio"
                         id="option-3"
-                        name="t-attend">Other</input>
+                        name="t_attend" value = 0>Unknwon</input>
                 </label>
             </div>
 
@@ -178,17 +178,17 @@
                 <label for="option-1">
                     <input type="radio"
                         id="option-1"
-                        name="non-profit">Yes</input>
+                        name="non_profit" value = 1>Yes</input>
                 </label>
                 <label for="option-2">
                     <input type="radio"
                         id="option-2"
-                        name="non-profit">No</input>
+                        name="non_profit" value = 0>No</input>
                 </label>
                 <label for="option-3">
                     <input type="radio"
                         id="option-3"
-                        name="non-profit">Other</input>
+                        name="non_profit" value = 0>Unknown</input>
                 </label>
             </div>
 
@@ -202,17 +202,17 @@
                 <label for="option-1">
                     <input type="radio"
                         id="option-1"
-                        name="subsidy">Yes</input>
+                        name="subsidy" value = 1>Yes</input>
                 </label>
                 <label for="option-2">
                     <input type="radio"
                         id="option-2"
-                        name="subsidy">No</input>
+                        name="subsidy" value = 0>No</input>
                 </label>
                 <label for="option-3">
                     <input type="radio"
                         id="option-3"
-                        name="subsidy">Other</input>
+                        name="subsidy" value = 0>Unknown</input>
                 </label>
             </div>
 
@@ -226,18 +226,18 @@
                 <label for="option-1">
                     <input type="radio"
                         id="option-1"
-                        name="rent-increase">Yes</input>
+                        name="rent_increase" value = 1>Yes</input>
                 </label>
                 <label for="option-2">
                     <input type="radio"
                         id="option-2"
-                        name="rent-increase">No</input>
+                        name="rent_increase" value = 0>No</input>
                 </label>
-                <label for="option-3">
+                <!-- <label for="option-3">
                     <input type="radio"
                         id="option-3"
-                        name="rent-increase">Other</input>
-                </label>
+                        name="rent-increase">Unknown</input>
+                </label> -->
             </div>
 
             <!-- payment after eviction -->        
@@ -250,17 +250,17 @@
                 <label for="option-1">
                     <input type="radio"
                         id="option-1"
-                        name="pay-after-eviction">Yes</input>
+                        name="pay_after_eviction" value = 1>Yes</input>
                 </label>
                 <label for="option-2">
                     <input type="radio"
                         id="option-2"
-                        name="pay-after-eviction">No</input>
+                        name="pay_after_eviction" value = 0>No</input>
                 </label>
                 <label for="option-3">
                     <input type="radio"
                         id="option-3"
-                        name="pay-after-eviction">Other</input>
+                        name="pay_after_eviction" value = 0>Unknown</input>
                 </label>
             </div>
 
@@ -274,17 +274,17 @@
                 <label for="option-1">
                     <input type="radio"
                         id="option-1"
-                        name="history-arrears">Yes</input>
+                        name="history_arrears" value = 1>Yes</input>
                 </label>
                 <label for="option-2">
                     <input type="radio"
                         id="option-2"
-                        name="history-arrears">No</input>
+                        name="history_arrears" value = 0>No</input>
                 </label>
                 <label for="option-3">
                     <input type="radio"
                         id="option-3"
-                        name="history-arrears">Other</input>
+                        name="history_arrears" value = 0>Unknown</input>
                 </label>
             </div>
 
@@ -298,17 +298,17 @@
                 <label for="option-1">
                     <input type="radio"
                         id="option-1"
-                        name="ability-pay">Yes</input>
+                        name="ability_pay" value = 1>Yes</input>
                 </label>
                 <label for="option-2">
                     <input type="radio"
                         id="option-2"
-                        name="ability-pay">No</input>
+                        name="ability_pay" value = 0>No</input>
                 </label>
                 <label for="option-3">
                     <input type="radio"
                         id="option-3"
-                        name="ability-pay">Other</input>
+                        name="ability_pay" value = 0>Unknown</input>
                 </label>
             </div>
 
@@ -322,17 +322,17 @@
                 <label for="option-1">
                     <input type="radio"
                         id="option-1"
-                        name="condition">Yes</input>
+                        name="condition" value = 1>Yes</input>
                 </label>
                 <label for="option-2">
                     <input type="radio"
                         id="option-2"
-                        name="condition">No</input>
+                        name="condition" value = 0>No</input>
                 </label>
                 <label for="option-3">
                     <input type="radio"
                         id="option-3"
-                        name="condition">Other</input>
+                        name="condition" value = 0>Unknown</input>
                 </label>
             </div>
             
@@ -346,17 +346,17 @@
                 <label for="option-1">
                     <input type="radio"
                         id="option-1"
-                        name="children">Yes</input>
+                        name="children" value = 1>Yes</input>
                 </label>
                 <label for="option-2">
                     <input type="radio"
                         id="option-2"
-                        name="children">No</input>
+                        name="children" value = 0>No</input>
                 </label>
                 <label for="option-3">
                     <input type="radio"
                         id="option-3"
-                        name="children">Other</input>
+                        name="children" value = 0>Unknown</input>
                 </label>
             </div>
 
@@ -370,17 +370,17 @@
                 <label for="option-1">
                     <input type="radio"
                         id="option-1"
-                        name="income">Yes</input>
+                        name="income" value = 1>Yes</input>
                 </label>
                 <label for="option-2">
                     <input type="radio"
                         id="option-2"
-                        name="income">No</input>
+                        name="income" value = 0>No</input>
                 </label>
                 <label for="option-3">
                     <input type="radio"
                         id="option-3"
-                        name="income">Other</input>
+                        name="income" value = 0>Unknown</input>
                 </label>
             </div>
 
@@ -394,17 +394,17 @@
                 <label for="option-1">
                     <input type="radio"
                         id="option-1"
-                        name="job-loss">Yes</input>
+                        name="job_loss" value = 1>Yes</input>
                 </label>
                 <label for="option-2">
                     <input type="radio"
                         id="option-2"
-                        name="job-loss">No</input>
+                        name="job_loss" value = 0>No</input>
                 </label>
                 <label for="option-3">
                     <input type="radio"
                         id="option-3"
-                        name="job-loss">Other</input>
+                        name="job_loss" value = 0>Unknown</input>
                 </label>
             </div>
 
@@ -418,41 +418,41 @@
                 <label for="option-1">
                     <input type="radio"
                         id="option-1"
-                        name="extenuating">Yes</input>
+                        name="extenuating" value = 1>Yes</input>
                 </label>
                 <label for="option-2">
                     <input type="radio"
                         id="option-2"
-                        name="extenuating">No</input>
+                        name="extenuating" value = 0>No</input>
                 </label>
                 <label for="option-3">
                     <input type="radio"
                         id="option-3"
-                        name="extenuating">Other</input>
+                        name="extenuating" value = 0>Unknown</input>
                 </label>
             </div>
 
             <!-- difficulty house search-->        
             <div class="form-control">
                 <label for="house-search" id="label-house-search">
-                    Does there show a tenant’s difficulty finding alternative housing for any reason e.g.physical limitations, reliance on social assistance, etc.?
+                    Does there show a tenant's difficulty finding alternative housing for any reason e.g.physical limitations, reliance on social assistance, etc.?
                 </label>
                 
                 <!-- Input Type Radio Button -->
                 <label for="option-1">
                     <input type="radio"
                         id="option-1"
-                        name="house-search">Yes</input>
+                        name="house_search" value = 1>Yes</input>
                 </label>
                 <label for="option-2">
                     <input type="radio"
                         id="option-2"
-                        name="house-search">No</input>
+                        name="house_search" value = 0>No</input>
                 </label>
                 <label for="option-3">
                     <input type="radio"
                         id="option-3"
-                        name="house-search">Other</input>
+                        name="house_search" value = 0>Unknown</input>
                 </label>
             </div>
 
@@ -466,17 +466,17 @@
                 <label for="option-1">
                     <input type="radio"
                         id="option-1"
-                        name="prior-notice">Yes</input>
+                        name="prior_notice" value = 1>Yes</input>
                 </label>
                 <label for="option-2">
                     <input type="radio"
                         id="option-2"
-                        name="prior-notice">No</input>
+                        name="prior_notice" value = 0>No</input>
                 </label>
                 <label for="option-3">
                     <input type="radio"
                         id="option-3"
-                        name="prior-notice">Other</input>
+                        name="prior_notice" value = 0>Unknown</input>
                 </label>
             </div>
 
@@ -490,17 +490,17 @@
                 <label for="option-1">
                     <input type="radio"
                         id="option-1"
-                        name="postponement-arrear">Yes</input>
+                        name="postponement_arrear" value = 1>Yes</input>
                 </label>
                 <label for="option-2">
                     <input type="radio"
                         id="option-2"
-                        name="postponement-arrear">No</input>
+                        name="postponement_arrear" value = 0>No</input>
                 </label>
                 <label for="option-3">
                     <input type="radio"
                         id="option-3"
-                        name="postponement-arrear">Other</input>
+                        name="postponement_arrear" value = 0>Unknown</input>
                 </label>
             </div>
 
@@ -514,43 +514,45 @@
                 <label for="option-1">
                     <input type="radio"
                         id="option-1"
-                        name="n4">Yes</input>
+                        name="n4" value = 1>Yes</input>
                 </label>
                 <label for="option-2">
                     <input type="radio"
                         id="option-2"
-                        name="n4">No</input>
+                        name="n4" value = 0>No</input>
                 </label>
                 <label for="option-3">
                     <input type="radio"
                         id="option-3"
-                        name="n4">Other</input>
+                        name="n4" value = 0>Unknown</input>
                 </label>
             </div>
 
-            <!-- employment-->        
+            <!-- Payment plan -->        
             <div class="form-control">
-                <label for="employment" id="label-employment">
-                    Is the tenant employed?
+                <label for="payment_plan" id="payment_plan">
+                    Did the tenant propose an payment plan?
                 </label>
                 
                 <!-- Input Type Radio Button -->
                 <label for="option-1">
                     <input type="radio"
                         id="option-1"
-                        name="employment">Yes</input>
+                        name="payment_plan" value = 1>The tenant proposed an payment plan and the member accepted this payment plan</input>
                 </label>
                 <label for="option-2">
                     <input type="radio"
                         id="option-2"
-                        name="employment">No</input>
+                        name="payment_plan" value = 0.5> The tenant proposed an payment plan but the member did not accept this payment plan</input>
                 </label>
                 <label for="option-3">
                     <input type="radio"
                         id="option-3"
-                        name="employment">Other</input>
+                        name="payment_plan" value = 0> The tenant did not propose an payment plan </input>
                 </label>
             </div>
+
+            
 
             <!-- Application forms-->  
             <div class="form-control">
@@ -605,7 +607,7 @@
             <!-- length of tenancy-->  
             <div class="form-control">
                 <label for="length" id="label-length">
-                    What was the length of the tenancy?*
+                    What was the length of the tenancy? (In month. Enter numeric input only EX:14)*
                 </label>
 
                 <!-- Input Type length-->
@@ -618,7 +620,7 @@
             <!-- monthly rent -->  
             <div class="form-control">
                 <label for="rent" id="label-rent">
-                    What was the monthly rent?*
+                    What was the monthly rent? (Enter numeric input only EX: 1,520.00)*
                 </label>
 
                 <!-- Input Type rent-->
@@ -631,7 +633,7 @@
             <!-- rental deposit amount -->  
             <div class="form-control">
                 <label for="rent_deposit" id="label-rent-deposit">
-                    What was the rental deposit amount?*
+                    What was the rental deposit amount? (Enter numeric input only EX: 1200.00)*
                 </label>
 
                 <!-- Input Type rent-->
@@ -643,38 +645,52 @@
 
             <!-- arear amount -->  
             <div class="form-control">
-                <label for="arrear-amount" id="label-arrear-amount">
-                    What was the total arear amount?
+                <label for="arrear_amount" id="label-arrear-amount">
+                    What was the total arear amount? (Enter numeric input only EX: 1200.00)*
                 </label>
 
                 <!-- Input Type rent-->
                 <input type="arrear-amount"
-                    id="arrear-amount"
+                    id="arrear_amount"
+                    name = "arrear_amount" required
                     placeholder="Enter the arear amount" />
             </div>
 
             <!-- arear month -->  
             <div class="form-control">
                 <label for="arrear-month" id="label-arrear-month">
-                    Over how many months did the arrears accumulate?
+                    Over how many months did the arrears accumulate? (In month. Enter numeric input only EX:14)*
                 </label>
 
                 <!-- Input Type rent-->
                 <input type="arrear-month"
                     id="arrear-month"
+                    name = "arrear_month" required
                     placeholder="Enter the arear month" />
             </div>
 
-            <!-- rental deposit amount -->  
+            <!-- employment-->        
             <div class="form-control">
-                <label for="tenant-employment" id="label-arrear-amount">
+                <label for="employment" id="label-employment">
                     Is the tenant employed?
                 </label>
-
-                <!-- Input Type rent-->
-                <input type="arrear-amount"
-                    id="arrear-amount"
-                    placeholder="Enter the arear amount" />
+                
+                <!-- Input Type Radio Button -->
+                <label for="option-1">
+                    <input type="radio"
+                        id="option-1"
+                        name="employment" value = 1>Yes</input>
+                </label>
+                <label for="option-2">
+                    <input type="radio"
+                        id="option-2"
+                        name="employment" value = 0>No</input>
+                </label>
+                <label for="option-3">
+                    <input type="radio"
+                        id="option-3"
+                        name="employment" value = 0>Unknown</input>
+                </label>
             </div>
 
                         <!-- goverment assistance-->        
@@ -687,17 +703,17 @@
                 <label for="option-1">
                     <input type="radio"
                         id="option-1"
-                        name="gov-assistance">Yes</input>
+                        name="gov_assistance" value= 1>Yes</input>
                 </label>
                 <label for="option-2">
                     <input type="radio"
                         id="option-2"
-                        name="gov-assistance">No</input>
+                        name="gov_assistance" value= 0>No</input>
                 </label>
                 <label for="option-3">
                     <input type="radio"
                         id="option-3"
-                        name="gov-assistance">None</input>
+                        name="gov_assistance" value= 0>Unknown</input>
                 </label>
             </div>
 
@@ -711,17 +727,17 @@
                 <label for="option-1">
                     <input type="radio"
                         id="option-1"
-                        name="stability">Yes</input>
+                        name="stability" value= 1>Yes</input>
                 </label>
                 <label for="option-2">
                     <input type="radio"
-                        id="option-2"
-                        name="stability">No</input>
+                        id="option-2" 
+                        name="stability" value= 0>No</input>
                 </label>
                 <label for="option-3">
                     <input type="radio"
                         id="option-3"
-                        name="stability">Other</input>
+                        name="stability" value= 0>Unknown</input>
                 </label>
             </div>
 
