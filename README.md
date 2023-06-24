@@ -51,6 +51,18 @@ After all the cleaning work, there are 696 examples and 47 features with no miss
 
 ### Models training and Evaluation
 
+* Training Subsets: 556(80%) samples
+  
+* Testing Subsets: 140(20%) samples
+  
+* Evaluation Metric: Accuracy
+
+
+Here is the model performance. Based on 700 data. We have a baseline, which is the dummy model, with 63% accuracy on the test dataset. With this baseline, we start trying the four models: logistic regression, SVM, random forest, and LightGBM. After fine-tuning these models, we can see the best performance in LGBM with around 81% accuracy and the worst performance in logistic regression with around 76%. However, these models value different features individually, so we decide to do an ensemble of four models to achieve a more consistent and bias-free result. Although the test score of the stacking model is a bit lower than the averaging model, it has a smaller standard deviation than most models above, so we decide it as the final model.
+
+![](images/train_evaluate.png)
+
+
 
 ## Pre-requisites and Dependencies
 
