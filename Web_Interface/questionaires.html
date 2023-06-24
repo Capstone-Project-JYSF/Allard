@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Eviction Predictinator</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible"
+		content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href = "./css/questionaries.css">
+</head>
+
+<body>
+    
+    <main class="body">
+        <h1>Questions</h1>
+
+        <button id="reset-button" class="reset">Reset</button>
+
+        <!-- Create Form -->
+        <form id="form" class="form">
+
+
+            <!-- location of tenant board -->
+            <div class="form-control">
+                <label for="location" id="label-location">
+                    What is the location of the landlord tenant board?
+                </label>
+                
+                <!-- Dropdown options -->
+                <select name="location" id="location">
+                    <option value="none" selected disabled hidden>Select an Option</option>
+                    <option value="Toronto">Toronto</option>
+                    <option value="Mississauga">Mississauga</option>
+                    <option value="Barrie">Barrie</option>
+                    <option value="London">London</option>
+                    <option value="Waterloo">Waterloo</option>
+                    <option value="Newmarket">Newmarket</option>                
+                    <option value="Windsor">Windsor</option>
+                    <option value="Stratford">Stratford</option>
+                    <option value="Woodstock">Woodstock</option>
+                    <option value="Whitby">Whitby</option>
+                    <option value="Lindsay">Lindsay</option>
+                    <option value="Belleville">Belleville</option>   
+                    <option value="Orangeville">Orangeville</option>
+                    <option value="Whitby">Whitby</option>
+                    <option value="Burlington">Burlington</option>
+                    <option value="Cobourg">Cobourg</option>
+                    <option value="by telephone">by telephone</option>
+                    <option value="Ottawa">Ottawa</option>   
+                    <option value="Hamilton">Hamilton</option>
+                    <option value="Bracebridge">Bracebridge</option>
+                    <option value="Belleville">Belleville</option>
+                    <option value="Peterborough">Peterborough</option>
+                    <option value="Kingston">Kingston</option>
+                    <option value="Sudbury">Sudbury</option>        
+                    <option value="Thunder Bay">Thunder Bay</option>
+                    <option value="Brantford">Brantford</option>                
+                    <option value="Unknown">Unknown</option>
+                </select>
+            </div>
+
+            <!-- landlord represented or not-->
+            <div class="form-control">
+                <label for="landlord-represented" id="label-landlord-represented">
+                    Will the landlord be represented?
+                </label>
+                
+                <!-- Dropdown options
+                <select name="landlord-represented" id="landlord-represented">
+                    <option value="none" selected disabled hidden>Select an Option</option>
+                    <option value=1>Yes</option>
+                    <option value=0>No</option>
+                    <option value="other">Other</option>
+                </select>
+            </div> -->
+
+            <!-- Input Type Radio Button -->
+                <label for="option-1">
+                    <input type="radio"
+                        id="option-1"
+                        name="l_represented"
+                        value = 1>Yes</input>
+                </label>
+                <label for="option-2">
+                    <input type="radio"
+                        id="option-2"
+                        name="l_represented"
+                        value = 0>No</input>
+                </label>
+                <label for="option-3">
+                    <input type="radio"
+                        id="option-3"
+                        name="l_represented"
+                        value = 0>Unknwon</input>
+                </label>
+            </div>
+
+            <!-- landlord attend or not-->
+            <div class="form-control">
+                <label for="landlord-attendance" id="label-landlord-attendance">
+                    Will the landlord attend the hearing?
+                </label>
+                
+                <!-- Input Type Radio Button -->
+                <label for="option-1">
+                    <input type="radio"
+                        id="option-1"
+                        name="l_attendance" value = 1>Yes</input>
+                </label>
+                <label for="option-2">
+                    <input type="radio"
+                        id="option-2"
+                        name="l_attendance" value = 0>No</input>
+                </label>
+                <label for="option-3">
+                    <input type="radio"
+                        id="option-3"
+                        name="l_attendance" value = 0>Unknwon</input>
+                </label>
+            </div>
+            
+            <!-- tenant represented or not-->
+            <div class="form-control">
+                <label for="tenant-represented" id="label-tenant-represented">
+                    Will the tenant be represented?
+                </label>
+                
+                <!-- Input Type Radio Button -->
+                <label for="option-1">
+                    <input type="radio"
+                        id="option-1"
+                        name="t_represented" value = 1>Yes</input>
+                </label>
+                <label for="option-2">
+                    <input type="radio"
+                        id="option-2"
+                        name="t_represented" value = 0>No</input>
+                </label>
+                <label for="option-3">
+                    <input type="radio"
+                        id="option-3"
+                        name="t_represented" value = 0>Unknwon</input>
+                </label>
+            </div>
+
+            <!-- tenant attend or not-->
+            <div class="form-control">
+                <label for="tenant-attend" id="label-tenant-attend">
+                    Will tenant attend the hearing?
+                </label>
+                
+                <!-- Input Type Radio Button -->
+                <label for="option-1">
+                    <input type="radio"
+                        id="option-1"
+                        name="t_attend" value = 1>Yes</input>
+                </label>
+                <label for="option-2">
+                    <input type="radio"
+                        id="option-2"
+                        name="t_attend" value = 0>No</input>
+                </label>
+                <label for="option-3">
+                    <input type="radio"
+                        id="option-3"
+                        name="t_attend" value = 0>Unknwon</input>
+                </label>
+            </div>
+
+            <!-- Non profit or Community Housing-->
+            <div class="form-control">
+                <label for="non-profit" id="label-non-profit">
+                    Was the landlord a not-for-profit landlord (e.g. Toronto Community Housing)?
+                </label>
+                
+                <!-- Input Type Radio Button -->
+                <label for="option-1">
+                    <input type="radio"
+                        id="option-1"
+                        name="non_profit" value = 1>Yes</input>
+                </label>
+                <label for="option-2">
+                    <input type="radio"
+                        id="option-2"
+                        name="non_profit" value = 0>No</input>
+                </label>
+                <label for="option-3">
+                    <input type="radio"
+                        id="option-3"
+                        name="non_profit" value = 0>Unknown</input>
+                </label>
+            </div>
+
+            <!-- collecting a subsidy-->        
+            <div class="form-control">
+                <label for="subsidy" id="label-subsidy">
+                    Is the tenant collecting a subsidy?
+                </label>
+                
+                <!-- Input Type Radio Button -->
+                <label for="option-1">
+                    <input type="radio"
+                        id="option-1"
+                        name="subsidy" value = 1>Yes</input>
+                </label>
+                <label for="option-2">
+                    <input type="radio"
+                        id="option-2"
+                        name="subsidy" value = 0>No</input>
+                </label>
+                <label for="option-3">
+                    <input type="radio"
+                        id="option-3"
+                        name="subsidy" value = 0>Unknown</input>
+                </label>
+            </div>
+
+            <!-- rent increase -->        
+            <div class="form-control">
+                <label for="rent-increase" id="label-rent-increase">
+                    Was there an rent increases?
+                </label>
+                
+                <!-- Input Type Radio Button -->
+                <label for="option-1">
+                    <input type="radio"
+                        id="option-1"
+                        name="rent_increase" value = 1>Yes</input>
+                </label>
+                <label for="option-2">
+                    <input type="radio"
+                        id="option-2"
+                        name="rent_increase" value = 0>No</input>
+                </label>
+                <!-- <label for="option-3">
+                    <input type="radio"
+                        id="option-3"
+                        name="rent-increase">Unknown</input>
+                </label> -->
+            </div>
+
+            <!-- payment after eviction -->        
+            <div class="form-control">
+                <label for="pay-after-eviction" id="label-pay-after-eviction">
+                    Does the tenant made a payment on the arrears after the eviction notice?
+                </label>
+                
+                <!-- Input Type Radio Button -->
+                <label for="option-1">
+                    <input type="radio"
+                        id="option-1"
+                        name="pay_after_eviction" value = 1>Yes</input>
+                </label>
+                <label for="option-2">
+                    <input type="radio"
+                        id="option-2"
+                        name="pay_after_eviction" value = 0>No</input>
+                </label>
+                <label for="option-3">
+                    <input type="radio"
+                        id="option-3"
+                        name="pay_after_eviction" value = 0>Unknown</input>
+                </label>
+            </div>
+
+            <!-- payment after eviction -->        
+            <div class="form-control">
+                <label for="history-arrears" id="label-history-arrears">
+                    Is there a history of arrears by the tenant separate from the arrears in the current claim (more than one period of arrears, recurrently coming in and out of arrears, arrears with previous landlord, etc.)?
+                </label>
+                
+                <!-- Input Type Radio Button -->
+                <label for="option-1">
+                    <input type="radio"
+                        id="option-1"
+                        name="history_arrears" value = 1>Yes</input>
+                </label>
+                <label for="option-2">
+                    <input type="radio"
+                        id="option-2"
+                        name="history_arrears" value = 0>No</input>
+                </label>
+                <label for="option-3">
+                    <input type="radio"
+                        id="option-3"
+                        name="history_arrears" value = 0>Unknown</input>
+                </label>
+            </div>
+
+            <!-- ability to pay -->        
+            <div class="form-control">
+                <label for="ability-pay" id="label-ability-pay">
+                    Is the tenant seemed to have the ability to pay rent, but chose not do so?
+                </label>
+                
+                <!-- Input Type Radio Button -->
+                <label for="option-1">
+                    <input type="radio"
+                        id="option-1"
+                        name="ability_pay" value = 1>Yes</input>
+                </label>
+                <label for="option-2">
+                    <input type="radio"
+                        id="option-2"
+                        name="ability_pay" value = 0>No</input>
+                </label>
+                <label for="option-3">
+                    <input type="radio"
+                        id="option-3"
+                        name="ability_pay" value = 0>Unknown</input>
+                </label>
+            </div>
+
+            <!-- mental/physical condition -->        
+            <div class="form-control">
+                <label for="condition" id="label-condition">
+                    Are there specific mental, medical, or physical conditions of the tenant, if any?
+                </label>
+                
+                <!-- Input Type Radio Button -->
+                <label for="option-1">
+                    <input type="radio"
+                        id="option-1"
+                        name="condition" value = 1>Yes</input>
+                </label>
+                <label for="option-2">
+                    <input type="radio"
+                        id="option-2"
+                        name="condition" value = 0>No</input>
+                </label>
+                <label for="option-3">
+                    <input type="radio"
+                        id="option-3"
+                        name="condition" value = 0>Unknown</input>
+                </label>
+            </div>
+            
+            <!-- Children -->        
+            <div class="form-control">
+                <label for="children" id="label-children">
+                    Does tenant have children living with them?
+                </label>
+                
+                <!-- Input Type Radio Button -->
+                <label for="option-1">
+                    <input type="radio"
+                        id="option-1"
+                        name="children" value = 1>Yes</input>
+                </label>
+                <label for="option-2">
+                    <input type="radio"
+                        id="option-2"
+                        name="children" value = 0>No</input>
+                </label>
+                <label for="option-3">
+                    <input type="radio"
+                        id="option-3"
+                        name="children" value = 0>Unknown</input>
+                </label>
+            </div>
+
+            <!-- sufficient income to pay-->        
+            <div class="form-control">
+                <label for="income" id="label-income">
+                    Does the tenant have sufficient income to pay rent?
+                </label>
+                
+                <!-- Input Type Radio Button -->
+                <label for="option-1">
+                    <input type="radio"
+                        id="option-1"
+                        name="income" value = 1>Yes</input>
+                </label>
+                <label for="option-2">
+                    <input type="radio"
+                        id="option-2"
+                        name="income" value = 0>No</input>
+                </label>
+                <label for="option-3">
+                    <input type="radio"
+                        id="option-3"
+                        name="income" value = 0>Unknown</input>
+                </label>
+            </div>
+
+            <!-- lose job -->        
+            <div class="form-control">
+                <label for="job-loss" id="label-job-loss">
+                    Did tenant lose their job leading up to the hearing?
+                </label>
+                
+                <!-- Input Type Radio Button -->
+                <label for="option-1">
+                    <input type="radio"
+                        id="option-1"
+                        name="job_loss" value = 1>Yes</input>
+                </label>
+                <label for="option-2">
+                    <input type="radio"
+                        id="option-2"
+                        name="job_loss" value = 0>No</input>
+                </label>
+                <label for="option-3">
+                    <input type="radio"
+                        id="option-3"
+                        name="job_loss" value = 0>Unknown</input>
+                </label>
+            </div>
+
+            <!-- extenuating circumstances-->        
+            <div class="form-control">
+                <label for="extenuating" id="label-extenuating">
+                    Did any other extenuating circumstances experienced by the tenant leading up to the period of the claim (e.g. hospitalization, death in the family, etc.)?
+                </label>
+                
+                <!-- Input Type Radio Button -->
+                <label for="option-1">
+                    <input type="radio"
+                        id="option-1"
+                        name="extenuating" value = 1>Yes</input>
+                </label>
+                <label for="option-2">
+                    <input type="radio"
+                        id="option-2"
+                        name="extenuating" value = 0>No</input>
+                </label>
+                <label for="option-3">
+                    <input type="radio"
+                        id="option-3"
+                        name="extenuating" value = 0>Unknown</input>
+                </label>
+            </div>
+
+            <!-- difficulty house search-->        
+            <div class="form-control">
+                <label for="house-search" id="label-house-search">
+                    Does there show a tenant's difficulty finding alternative housing for any reason e.g.physical limitations, reliance on social assistance, etc.?
+                </label>
+                
+                <!-- Input Type Radio Button -->
+                <label for="option-1">
+                    <input type="radio"
+                        id="option-1"
+                        name="house_search" value = 1>Yes</input>
+                </label>
+                <label for="option-2">
+                    <input type="radio"
+                        id="option-2"
+                        name="house_search" value = 0>No</input>
+                </label>
+                <label for="option-3">
+                    <input type="radio"
+                        id="option-3"
+                        name="house_search" value = 0>Unknown</input>
+                </label>
+            </div>
+
+            <!-- prior notice for eviction-->        
+            <div class="form-control">
+                <label for="prior-notice" id="label-prior-notice">
+                    Was the tenant given prior notice for the eviction?
+                </label>
+                
+                <!-- Input Type Radio Button -->
+                <label for="option-1">
+                    <input type="radio"
+                        id="option-1"
+                        name="prior_notice" value = 1>Yes</input>
+                </label>
+                <label for="option-2">
+                    <input type="radio"
+                        id="option-2"
+                        name="prior_notice" value = 0>No</input>
+                </label>
+                <label for="option-3">
+                    <input type="radio"
+                        id="option-3"
+                        name="prior_notice" value = 0>Unknown</input>
+                </label>
+            </div>
+
+            <!-- Postponement result in arrears-->        
+            <div class="form-control">
+                <label for="postponement-arrear" id="label-postponement-arrear">
+                    Will postponement result in the tenant accruing additional arrears?
+                </label>
+                
+                <!-- Input Type Radio Button -->
+                <label for="option-1">
+                    <input type="radio"
+                        id="option-1"
+                        name="postponement_arrear" value = 1>Yes</input>
+                </label>
+                <label for="option-2">
+                    <input type="radio"
+                        id="option-2"
+                        name="postponement_arrear" value = 0>No</input>
+                </label>
+                <label for="option-3">
+                    <input type="radio"
+                        id="option-3"
+                        name="postponement_arrear" value = 0>Unknown</input>
+                </label>
+            </div>
+
+            <!-- N4-->        
+            <div class="form-control">
+                <label for="n4" id="label-n4">
+                    Is there a validity of an N4 eviction notice?
+                </label>
+                
+                <!-- Input Type Radio Button -->
+                <label for="option-1">
+                    <input type="radio"
+                        id="option-1"
+                        name="n4" value = 1>Yes</input>
+                </label>
+                <label for="option-2">
+                    <input type="radio"
+                        id="option-2"
+                        name="n4" value = 0>No</input>
+                </label>
+                <label for="option-3">
+                    <input type="radio"
+                        id="option-3"
+                        name="n4" value = 0>Unknown</input>
+                </label>
+            </div>
+
+            <!-- Payment plan -->        
+            <div class="form-control">
+                <label for="payment_plan" id="payment_plan">
+                    Did the tenant propose an payment plan?
+                </label>
+                
+                <!-- Input Type Radio Button -->
+                <label for="option-1">
+                    <input type="radio"
+                        id="option-1"
+                        name="payment_plan" value = 1>The tenant proposed an payment plan and the member accepted this payment plan</input>
+                </label>
+                <label for="option-2">
+                    <input type="radio"
+                        id="option-2"
+                        name="payment_plan" value = 0.5> The tenant proposed an payment plan but the member did not accept this payment plan</input>
+                </label>
+                <label for="option-3">
+                    <input type="radio"
+                        id="option-3"
+                        name="payment_plan" value = 0> The tenant did not propose an payment plan </input>
+                </label>
+            </div>
+
+            
+
+            <!-- Application forms-->  
+            <div class="form-control">
+                <label>What application forms will be presented?
+                    <small>(Check all that apply)</small>
+                </label>
+                <!-- Input Type Checkbox -->
+                <label for="checkbox1">
+                    <input type="checkbox" id="checkbox1"
+                    name="checkbox[]" value="L1">L1</input></label>
+                <label for="checkbox2">
+                    <input type="checkbox" id="checkbox2"
+                    name="checkbox[]" value="L2">L2</input></label>
+                <label for="checkbox3">
+                    <input type="checkbox" id="checkbox3"
+                    name="checkbox[]" value="L3">L3</input></label>
+                <label for="checkbox4">
+                    <input type="checkbox" id="checkbox4"
+                    name="checkbox[]" value="L4">L4</input></label>
+                <label for="checkbox5">
+                    <input type="checkbox" id="checkbox5"
+                    name="checkbox[]" value="L8">L8</input></label>
+                <label for="checkbox6">
+                    <input type="checkbox" id="checkbox6"
+                    name="checkbox[]" value="L9">L9</input></label>
+                <label for="checkbox7">
+                    <input type="checkbox" id="checkbox7"
+                    name="checkbox[]" value="N5">N5</input></label>
+                <label for="checkbox8">
+                    <input type="checkbox" id="checkbox8"
+                    name="checkbox[]" value="N6">N6</input></label>
+                <label for="checkbox9">
+                    <input type="checkbox" id="checkbox9"
+                    name="checkbox[]" value="N8">N8</input></label>
+                <label for="checkbox10">
+                    <input type="checkbox" id="checkbox10"
+                    name="checkbox[]" value="T1">T1</input></label>
+                <label for="checkbox11">
+                    <input type="checkbox" id="checkbox11"
+                    name="checkbox[]" value="T2">T2</input></label>
+                <label for="checkbox12">
+                    <input type="checkbox" id="checkbox12"
+                    name="checkbox[]" value="T3">T3</input></label>
+                <label for="checkbox13">
+                    <input type="checkbox" id="checkbox13"
+                    name="checkbox[]" value="T5">T5</input></label>
+                <label for="checkbox14">
+                    <input type="checkbox" id="checkbox14"
+                    name="checkbox[]" value="T6">T6</input></label>
+            </div>
+
+            <!-- length of tenancy-->  
+            <div class="form-control">
+                <label for="length" id="label-length">
+                    What was the length of the tenancy? (In month. Enter numeric input only EX:14)*
+                </label>
+
+                <!-- Input Type length-->
+                <input type="length"
+                    id="length"
+                    name="length" required
+                    placeholder="Enter your length of tenancy" />
+            </div>
+
+            <!-- monthly rent -->  
+            <div class="form-control">
+                <label for="rent" id="label-rent">
+                    What was the monthly rent? (Enter numeric input only EX: 1,520.00)*
+                </label>
+
+                <!-- Input Type rent-->
+                <input type="rent"
+                    id="rent"
+                    name="rent" required
+                    placeholder="Enter your monthly rent" />
+            </div>
+    
+            <!-- rental deposit amount -->  
+            <div class="form-control">
+                <label for="rent_deposit" id="label-rent-deposit">
+                    What was the rental deposit amount? (Enter numeric input only EX: 1200.00)*
+                </label>
+
+                <!-- Input Type rent-->
+                <input type="rent_deposit"
+                    id="rent_deposit"
+                    name="rent_deposit" required
+                    placeholder="Enter your rental deposit amount" />
+            </div>
+
+            <!-- arear amount -->  
+            <div class="form-control">
+                <label for="arrear_amount" id="label-arrear-amount">
+                    What was the total arear amount? (Enter numeric input only EX: 1200.00)*
+                </label>
+
+                <!-- Input Type rent-->
+                <input type="arrear-amount"
+                    id="arrear_amount"
+                    name = "arrear_amount" required
+                    placeholder="Enter the arear amount" />
+            </div>
+
+            <!-- arear month -->  
+            <div class="form-control">
+                <label for="arrear-month" id="label-arrear-month">
+                    Over how many months did the arrears accumulate? (In month. Enter numeric input only EX:14)*
+                </label>
+
+                <!-- Input Type rent-->
+                <input type="arrear-month"
+                    id="arrear-month"
+                    name = "arrear_month" required
+                    placeholder="Enter the arear month" />
+            </div>
+
+            <!-- employment-->        
+            <div class="form-control">
+                <label for="employment" id="label-employment">
+                    Is the tenant employed?
+                </label>
+                
+                <!-- Input Type Radio Button -->
+                <label for="option-1">
+                    <input type="radio"
+                        id="option-1"
+                        name="employment" value = 1>Yes</input>
+                </label>
+                <label for="option-2">
+                    <input type="radio"
+                        id="option-2"
+                        name="employment" value = -1>No</input>
+                </label>
+                <label for="option-3">
+                    <input type="radio"
+                        id="option-3"
+                        name="employment" value = 0>Unknown</input>
+                </label>
+            </div>
+
+                        <!-- goverment assistance-->        
+            <div class="form-control">
+                <label for="gov-assistance" id="label-gov-assistance">
+                    If the tenant is not employed, was the tenant receiving any form of government assistance (e.g. OW, childcare benefits, ODSP, OSAP)?
+                </label>
+                
+                <!-- Input Type Radio Button -->
+                <label for="option-1">
+                    <input type="radio"
+                        id="option-1"
+                        name="gov_assistance" value= 1>Yes</input>
+                </label>
+                <label for="option-2">
+                    <input type="radio"
+                        id="option-2"
+                        name="gov_assistance" value= -1>No</input>
+                </label>
+                <label for="option-3">
+                    <input type="radio"
+                        id="option-3"
+                        name="gov_assistance" value= 0>Unknown</input>
+                </label>
+            </div>
+
+            <!-- stability of employment-->        
+            <div class="form-control">
+                <label for="stability" id="label-stability">
+                    If the tenant was employed, is there any doubts about the stability of employment e.g. lack of guaranteed hours, contract work, etc.?
+                </label>
+                
+                <!-- Input Type Radio Button -->
+                <label for="option-1">
+                    <input type="radio"
+                        id="option-1"
+                        name="stability" value= 1>Yes</input>
+                </label>
+                <label for="option-2">
+                    <input type="radio"
+                        id="option-2" 
+                        name="stability" value= -1>No</input>
+                </label>
+                <label for="option-3">
+                    <input type="radio"
+                        id="option-3"
+                        name="stability" value= 0>Unknown</input>
+                </label>
+            </div>
+
+            <!-- <div class="form-control">
+                <label for="comment">
+                    Any comments or suggestions
+                </label>
+
+                multi-line text input control -->
+                <!-- <textarea name="comment" id="comment"
+                    placeholder="Enter your comment here">
+                </textarea>
+            </div> -->
+
+            <button id="submit-button" class = 'button1'>Submit</button>
+            <p id="error-message" style="color: red; display: none;">Please fill in all required fields.</p>
+            <p id="success-message" style="color: green; display: none;"></p>
+        </form>
+    <script>
+        const resetButton = document.getElementById("reset-button");
+        const form = document.getElementById("form");
+        
+        const submitButton = document.getElementById("submit-button");
+        const errorMessage = document.getElementById("error-message");
+        const successMessage = document.getElementById("success-message");
+        
+
+        resetButton.addEventListener("click", function() {
+            form.reset();
+        })
+
+        submitButton.addEventListener("click", async function() {
+        
+            // Retrieve the form element
+            const form = document.getElementById("form");
+            
+            if (form.checkValidity()) {
+                
+                const formData = new FormData(form);
+
+                const checkboxes =
+                    document.getElementsByName('checkbox[]');
+                const result = [];
+                for (var i = 0; i < checkboxes.length; i++) {
+                    if (checkboxes[i].checked) {
+                        result.push(checkboxes[i].value);
+                    }
+                }
+                formData.delete("checkbox[]");
+                formData.append("checkbox[]", result);
+            
+                // Send the data to the backend using FastAPI
+                try {
+                    const response = await fetch('/submit-form', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    const result = await response.json();
+                    // Handle the received result from the backend
+                    console.log(result);
+                    // Display success message
+                    successMessage.textContent = result.message;
+                    successMessage.style.display = 'block';
+                    // Reset the form
+                    // form.reset();
+                    const probabilities = result.probabilities;
+                    // Redirect to result page with probabilities
+                    window.location.href = `/result.html?probability1=${probabilities.probability1}
+                                &probability2=${probabilities.probability2}
+                                &probability3=${probabilities.probability3}`;
+                    
+                } catch (error) {
+                        console.error('Error:', error);
+                    }
+                } else {
+                    // Display an error message
+                    errorMessage.style.display = 'block';
+                }
+        });
+    </script>
+</body>
+</html>
