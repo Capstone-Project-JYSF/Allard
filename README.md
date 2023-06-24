@@ -9,6 +9,7 @@ The project aims to create a system that can provide brief information about the
 * [Overview of the Data](#overview-of-the-data)
 * [Pre-requisites and Dependencies](#pre-requisites-and-dependencies)
 * [Getting Started](#getting-started)
+* [Future Work](#future-work)
 * [Resources](#resources)
 * [Credits](#credits)
 
@@ -42,13 +43,16 @@ The project aims to create a system that can provide brief information about the
 ## Getting Started 
 
 
-### Local Development 
+### Front-End
+
+
+### Back-End
 
 
 ### Docker
 
 
-## Continuous Integration (CI)
+## Future Work
 
 
 ## Resources
