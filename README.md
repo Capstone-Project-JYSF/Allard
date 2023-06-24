@@ -89,10 +89,13 @@ For the backend, it retrieves the questionnaire answers as a CSV and sends it to
 
 ### Docker
 
-Coming soon....
+Coming soon...
 
 ## Future Work
 
+Other than the model we are using right now, we also tried to implement the LLM into this project, but we face several limitations in this project such as the length limitations of LLM and computing resources limitations, so it was not implemented. However, it does have the potential to achieve a better score. Future work can continue to explore the LLM model and try to apply it to this matter.
+
+Furthermore, even though this project is on Ontario Tenancy Dispute, it does not limit to this area of law. This is a proof of concept that AI can be applied in the area of law to both help lawyers visualize different aspects of law and help the client to make decisions when facing injustice situations. As a result, future work can look at different areas of law and implement a larger model that cover every aspect of law.
 
 ## Resources
 
