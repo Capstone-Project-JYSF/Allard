@@ -6,7 +6,7 @@ The project aims to create a system that can provide brief information about the
 
 ## Table of Contents
 * [Contributors](#contributors)
-* [Overview of the Data Product](#overview-of-the-data)
+* [Overview of the Data](#overview-of-the-data)
 * [Pre-requisites and Dependencies](#pre-requisites-and-dependencies)
 * [Getting Started](#getting-started)
 * [Resources](#resources)
