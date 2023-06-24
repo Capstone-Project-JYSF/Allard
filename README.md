@@ -71,20 +71,36 @@ Here is the model performance. Based on 700 data. We have a baseline, which is t
 
 
 ### Front-End
+* Homepage
 
+There are three buttons on the homepage: "Start", "Home", and "About". The "Home" button is supposed to take you to the homepage, but it is shown grey since it is already on the homepage. The "About" button will take you to a page where you can find more information about the project. The "Start" button will take you to the questionnaire page.
+
+* Questionnaire Page
+
+The questionnaire page contains multiple questions. You can reset all your answers with the "Reset" button at the beginning when answering. After answering everything, you can click on the "submit" button that takes you to the result page.
+ 
+* Result Page
+
+The result page is where you can get your result for your situation, it will give you three probability that corresponding to: "relief", "no relief", and "conditional order". 
 
 ### Back-End
 
+For the backend, it retrieves the questionnaire answers as a CSV and sends it to the model for prediction, then extract these predictions and displays them on the result page
 
 ### Docker
 
+Coming soon....
 
 ## Future Work
 
 
 ## Resources
 
-[CanLII](https://link-url-here.org](https://www.canlii.org/en/)https://www.canlii.org/en/)
+[CanLII](https://www.canlii.org/en/)
 
 
 ## Credits
+
+We would like to thank our supervisor, Garrett Nicolai for his advice on various tasks in this project.
+
+We would like to thank our partners Josh Morrison and Anna Welch for their support on questions in area of law.
