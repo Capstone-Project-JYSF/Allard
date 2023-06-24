@@ -2,7 +2,7 @@
 
 <img src=images/allard_logo.png width="300" height="300">
 
-<details open>
+<details>
 
   <summary>Directory Structure</summary>
   
@@ -69,6 +69,7 @@
 </details>
 
 ## Introduction 
+
 The project aims to create a system that can provide brief information about the winning prediction on Residential Tenancy related issues in Ontario by analyzing 44,228 cases to understand why judges allow or deny eviction orders in Ontario's Residential Tenancy Board (RTB) under the current legislation. This is fascinating and socially significant since it helps thousands of people who are considering whether to launch the suit or not due to financial-related problems. Additionally, the current legislation's ambiguity makes it difficult for legal practitioners and academics to predict or understand the reasoning behind certain decisions. 
 
 ![](images/intro.png)
