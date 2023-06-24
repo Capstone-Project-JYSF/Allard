@@ -63,9 +63,9 @@ Here is the model performance. Based on 700 data. We have a baseline, which is t
 ![](images/train_evaluate.png)
 
 
-
 ## Pre-requisites and Dependencies
 
+To retrain the model, several packages of Python like pandas are required. Additionally, the front-end solely won't be able to provide you with the result, it is required to host a server where you have a model to do prediction and send the result to the front-end. 
 
 ## Getting Started 
 
