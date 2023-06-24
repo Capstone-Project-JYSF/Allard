@@ -102,6 +102,9 @@ Furthermore, even though this project is on Ontario Tenancy Dispute, it does not
 
 [CanLII](https://www.canlii.org/en/)
 
+[Sklearn models page](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.linear_model)
+
+[Python Pandas](https://pandas.pydata.org/)
 
 ## Credits
 
