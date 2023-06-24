@@ -19,11 +19,10 @@ The project aims to create a system that can provide brief information about the
 
 * Francesco Strafforello
  
-## Overview of the Data Product
+## Overview of the Data
 
 
-### Data Collection
-
+### Data Sample
 
 ### Data Preprocessing
 
