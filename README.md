@@ -11,6 +11,13 @@ The project aims to create a system that can provide brief information about the
 
 ## Contributors
 
+* Siyu Li
+
+* Jialiang(Justin) Ren
+
+* Yu Tian Shen
+
+* Francesco Strafforello
  
 ## Overview of the Data Product
 
