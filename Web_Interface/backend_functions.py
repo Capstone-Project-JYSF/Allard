@@ -1,6 +1,6 @@
 import re
 import csv
-
+import joblib
 
 headers = [
     'case number', 'Who was the member adjudicating the decision?', 
@@ -34,14 +34,7 @@ headers = [
     'L1 present?', 'L2 present?', 'L3 present?', 'L4 present?', 'L8 present?', 'L9 present?', 'N5 present?', 'N6 present?', 'N7 present?', 'N8 present?', 'T1 present?', 'T2 present?', 'T3 present?', 'T5 present?', 'T6 present?']
 
 
-def calculate_probabilities():
-    # Perform your calculations and get the probabilities
-    probabilities = {
-        'probability1': 0.8,
-        'probability2': 0.5,
-        'probability3': 0.3
-    }
-    return probabilities
+
 
 def save_to_csv(data):
     """ 
@@ -127,3 +120,19 @@ def convert_arrear_month(month: str):
         return avg
     else:
         return float(month.strip(">"))
+    
+
+def calculate_probabilities():
+    """ 
+    Load the model from models, and calculate the probabilities for
+    3 possible outcomes.
+    return: dict
+    """
+    # loaded_model = joblib.load('stacking_model.sav')
+    # Perform your calculations and get the probabilities
+    probabilities = {
+        'probability1': 0.8,
+        'probability2': 0.5,
+        'probability3': 0.3
+    }
+    return probabilities
