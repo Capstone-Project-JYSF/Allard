@@ -84,5 +84,7 @@ Here is the model performance. Based on 700 data. We have a baseline, which is t
 
 ## Resources
 
+[CanLII](https://link-url-here.org](https://www.canlii.org/en/)https://www.canlii.org/en/)
+
 
 ## Credits
