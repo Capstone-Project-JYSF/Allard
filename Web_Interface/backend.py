@@ -124,10 +124,13 @@ async def submit_form(request: Request):
     # Perform calculations and get probabilities
     probabilities = calculate_probabilities()
 
+    print(probabilities)
     # Prepare the JSON response
-    response_data = {
-        'probabilities': probabilities
-    }
+    # response_data = {
+    #     'probabilities': probabilities
+    # }
+    response_data = probabilities
+
 
     return JSONResponse(content=response_data)
 
