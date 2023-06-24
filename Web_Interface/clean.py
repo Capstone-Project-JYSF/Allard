@@ -61,8 +61,8 @@ def convert_checkbox(selected):
     """
     checkboxes = ["L1", "L2", "L3", "L4", "L8", "L9", "N5", "N6", "N8", "T1", "T2", "T3","T5","T6"]
     result = []
-    for i in selected:
-        if i in checkboxes:
+    for i in checkboxes:
+        if i in selected:
             result.append(1)
         else:
             result.append(0)

@@ -116,7 +116,7 @@ async def submit_form(request: Request):
         income, job_loss, extenuating,
         house_search,prior_notice, postponement_arrear, 
         n4, payment_plan, 
-        ]+checkbox 
+        ] + checkbox 
     
     save_to_csv(csv_data)
 
