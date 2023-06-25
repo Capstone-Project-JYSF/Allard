@@ -756,6 +756,9 @@
             <p id="error-message" style="color: red; display: none;">Please fill in all required fields.</p>
             <p id="success-message" style="color: green; display: none;"></p>
         </form>
+        <!-- <button type="button" id="submit-button" class = 'button1'>Submit</button>
+        <p id="error-message" style="color: red; display: none;">Please fill in all required fields.</p>
+        <p id="success-message" style="color: green; display: none;"></p> -->
     <script>
         const resetButton = document.getElementById("reset-button");
         const form = document.getElementById("form");
@@ -805,10 +808,8 @@
                     // form.reset();
                     const probabilities = result.probabilities;
                     // Redirect to result page with probabilities
-                    window.location.href = `/result.html?probability1=${probabilities.probability1}
-                                &probability2=${probabilities.probability2}
-                                &probability3=${probabilities.probability3}`;
-                    
+                    window.location.href = `/result.html?probability1=${probabilities.probability1}&probability2=${probabilities.probability2}&probability3=${probabilities.probability3}`;
+
                 } catch (error) {
                         console.error('Error:', error);
                     }

@@ -123,26 +123,28 @@ async def submit_form(request: Request):
 
     # Perform calculations and get probabilities
     probabilities = calculate_probabilities()
+    
+    # Create the response data
+    response_data = {
+        "probabilities": probabilities
+    }
+    
+    # test examples
+    # probability1 = 0.7
+    # probability2 = 0.2
+    # probability3 = 0.1
 
-    print(probabilities)
-    # Prepare the JSON response
     # response_data = {
-    #     'probabilities': probabilities
+    #     "probabilities": {
+    #         "probability1": probability1,
+    #         "probability2": probability2,
+    #         "probability3": probability3
+    #     }
     # }
-    response_data = probabilities
-
 
     return JSONResponse(content=response_data)
 
 
-
-@app.get("/result")
-async def show_result(request: Request):
-    # Your code to retrieve the probabilities from the model
-    probabilities = [0.7, 0.2, 0.1]
-
-    context = {"request": request, "probabilities": probabilities}
-    return templates.TemplateResponse("result.html", context)
 
 @app.get("/")
 async def start():

@@ -16,11 +16,11 @@ const probability1 = urlParams.get('probability1');
 const probability2 = urlParams.get('probability2');
 const probability3 = urlParams.get('probability3');
 
-// Display the probabilities on the result page
-const probabilitiesContainer = document.createElement('div');
-probabilitiesContainer.innerHTML = `
-  <p>Probability 1: ${probability1}</p>
-  <p>Probability 2: ${probability2}</p>
-  <p>Probability 3: ${probability3}</p>
-`;
-document.body.appendChild(probabilitiesContainer);
+// Update the text content of the probability elements
+const probabilityElement1 = document.getElementById('probability1');
+const probabilityElement2 = document.getElementById('probability2');
+const probabilityElement3 = document.getElementById('probability3');
+
+probabilityElement1.textContent = probability1;
+probabilityElement2.textContent = probability2;
+probabilityElement3.textContent = probability3;

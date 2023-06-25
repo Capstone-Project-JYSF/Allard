@@ -135,7 +135,11 @@ def calculate_probabilities():
     
     model = joblib.load('./../models/stacking_model.sav')
     # classes order: 'Conditional Order', 'No relief', 'Relief'
-    p1, p2, p3 = model.predict_proba(X)
+    Y = model.predict_proba(X)
+    p1, p2, p3 = Y[0]
+    p1 = round(p1*100,2)
+    p2 = round(p2*100,2)
+    p3 = round(p3*100,2)
 
     # Perform your calculations and get the probabilities
     probabilities = {
