@@ -53,7 +53,7 @@ def convert_checkbox(selected):
     Easier for model to process.
     Return: list
     """
-    checkboxes = ["L1", "L2", "L3", "L4", "L8", "L9", "N5", "N6", "N8", "T1", "T2", "T3","T5","T6"]
+    checkboxes = ["L1", "L2", "L3", "L4", "L8", "L9", "N5", "N6", "N7","N8", "T1", "T2", "T3","T5","T6"]
     result = []
     for i in checkboxes:
         if i in selected:
