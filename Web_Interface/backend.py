@@ -124,15 +124,15 @@ async def submit_form(request: Request):
     # Perform calculations and get probabilities
     probabilities = calculate_probabilities()
     
-    # Create the response data
+    # # Create the response data
     response_data = {
         "probabilities": probabilities
     }
     
     # test examples
-    # probability1 = 0.7
-    # probability2 = 0.2
-    # probability3 = 0.1
+    # probability1 = 70
+    # probability2 = 20
+    # probability3 = 10
 
     # response_data = {
     #     "probabilities": {

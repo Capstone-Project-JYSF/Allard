@@ -21,6 +21,7 @@ const probabilityElement1 = document.getElementById('probability1');
 const probabilityElement2 = document.getElementById('probability2');
 const probabilityElement3 = document.getElementById('probability3');
 
-probabilityElement1.textContent = probability1;
-probabilityElement2.textContent = probability2;
-probabilityElement3.textContent = probability3;
+
+probabilityElement1.textContent = `${probability1}%`;
+probabilityElement2.textContent = `${probability2}%`;
+probabilityElement3.textContent = `${probability3}%`;
