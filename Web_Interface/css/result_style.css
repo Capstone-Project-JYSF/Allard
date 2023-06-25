@@ -156,9 +156,71 @@ body {
 
 
 .displayBox h2 {
-    font-size: 70px;
+    font-size: 50px;
 }
 
 .displayBox h3 {
+    font-size: 30px;
+}
+
+.displayBox2 {
+    border: 1px solid transparent; /*make sure to comment out this box! it doesnt look good!-->*/
+    padding: 2s0px;
+    width: 400px;
+    height: 400px;
+    right: 17%;
+    overflow: auto;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+  }
+
+
+.displayBox2 h2 {
     font-size: 50px;
 }
+
+.displayBox2 h3 {
+    font-size: 30px;
+}
+
+.displayBox3 {
+    border: 1px solid transparent; /*make sure to comment out this box! it doesnt look good!-->*/
+    padding: 2s0px;
+    width: 400px;
+    height: 400px;
+    right: 30%;
+    overflow: auto;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+  }
+
+
+.displayBox3 h2 {
+    font-size: 50px;
+}
+
+.displayBox3 h3 {
+    font-size: 30px;
+}
+
+.explanation {
+    position: fixed;
+    bottom: 0;
+    left: 250;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid transparent;
+    text-align: left;
+  }
+  
+  .explanation h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .explanation p {
+    font-size: 20px;
+    line-height: 1.5;
+  }

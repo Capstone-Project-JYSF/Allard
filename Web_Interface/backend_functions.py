@@ -1,6 +1,7 @@
 import re
 import csv
 import joblib
+import pandas as pd
 
 headers = [
     'case number', 'Who was the member adjudicating the decision?', 
@@ -52,7 +53,7 @@ def convert_checkbox(selected):
     Easier for model to process.
     Return: list
     """
-    checkboxes = ["L1", "L2", "L3", "L4", "L8", "L9", "N5", "N6", "N8", "T1", "T2", "T3","T5","T6"]
+    checkboxes = ["L1", "L2", "L3", "L4", "L8", "L9", "N5", "N6", "N7","N8", "T1", "T2", "T3","T5","T6"]
     result = []
     for i in checkboxes:
         if i in selected:
@@ -66,7 +67,7 @@ def convert_length(length:str):
     Convert user's input into a standard convention
     Return: int
     """
-    avg = 6.306049004594181
+    avg = 6.306049004594181 # from cleaning, based on training dataset
     if "tated" in length or "N" in length:
         return avg
     elif length.isdigit() or "." in length:
@@ -80,7 +81,7 @@ def convert_rent(rent:str):
     Convert user's input into a standard convention
     Return: float
     """
-    avg = 1595.9445741324917
+    avg = 1595.9445741324917 # from cleaning, based on training dataset
     if "tated" in rent or "N" in rent:
         return avg
     else:
@@ -91,7 +92,7 @@ def convert_rent_deposit(rent_deposit:str):
     Convert user's input into a standard convention
     Return: float
     """
-    avg = 1365.9816966067863
+    avg = 1365.9816966067863 # from cleaning, based on training dataset
     if "tated" in rent_deposit or "N" in rent_deposit:
         return avg
     else:
@@ -128,11 +129,22 @@ def calculate_probabilities():
     3 possible outcomes.
     return: dict
     """
-    # loaded_model = joblib.load('stacking_model.sav')
+    
+    # read csv
+    X = pd.read_csv('form_data.csv')
+    
+    model = joblib.load('./../models/stacking_model.sav')
+    # classes order: 'Conditional Order', 'No relief', 'Relief'
+    Y = model.predict_proba(X)
+    p1, p2, p3 = Y[0]
+    p1 = round(p1*100,2)
+    p2 = round(p2*100,2)
+    p3 = round(p3*100,2)
+
     # Perform your calculations and get the probabilities
     probabilities = {
-        'probability1': 0.8,
-        'probability2': 0.5,
-        'probability3': 0.3
+        'probability1': p1,
+        'probability2': p2,
+        'probability3': p3
     }
     return probabilities
