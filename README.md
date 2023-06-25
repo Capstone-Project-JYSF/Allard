@@ -155,9 +155,6 @@ The result page is where you can get your result for your situation, it will giv
 
 For the backend, it retrieves the questionnaire answers as a CSV and sends it to the model for prediction, then extract these predictions and displays them on the result page
 
-### Docker
-
-Coming soon...
 
 ## Future Work
 
